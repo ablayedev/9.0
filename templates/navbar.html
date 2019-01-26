@@ -1,0 +1,57 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+<div class="navbar-fixed">
+    <nav class="white">
+        <div class="container">
+                <div class="nav-wrapper black-text">
+                        <a href="#" class="brand-logo left"><img src="{% static 'image/logo.jpg' %}" alt="" srcset="" class="logo"></a>
+                        <a href="#" data-target="mobile-nav" class="right sidenav-trigger">
+                            <i class="large material-icons right black-text">menu</i>
+                        </a>
+                        <ul class="hide-on-med-and-down right">
+                                <li class="accueil"> <a class="black-text active" href="{% url 'accueil:index' %}">Accueil</a> </li>
+                                <li class="boutique"> <a class="black-text" href="{% url 'boutique:page_boutique' %}">Boutique</a> </li>
+                                <li class="medical"> <a class="black-text" href="{% url 'medical:index' %}">Santé visuelle</a> </li>
+                                <li class="contact"> <a class="black-text modal-trigger" href="#modal2">Contact</a> </li>
+                                <li style="margin-left:75px;"><a href="{% url 'panier:register_sign' %}" class="waves-effect btn-large red "> <i class="material-icons red large">add_shopping_cart</i> </a></li>
+                        </ul>
+                    </div>
+        </div>
+    </nav>
+       
+</div>
+<ul class="sidenav" id="mobile-nav">
+        <li class="accueil"> <a class="black-text" href="{% url 'accueil:index' %}">Accueil</a> </li>
+        <li class="boutique"> <a class="black-text" href="{% url 'boutique:page_boutique' %}">Boutique</a> </li>
+        <li class="medical"> <a class="black-text" href="{% url 'medical:index' %}">Santé visuelle</a> </li>
+        <li class="contact"> <a class="black-text" href="#">Contact</a> </li>
+        <div class="divider"></div>
+        <li><button class="waves-effect btn-large red ">visiter notre magasin</button></li>
+</ul>
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header"> <i class="material-icons green-text">email</i>Email </div>
+                <div class="collapsible-body">
+                    <h4><a href="#">9.0@gmail.com</a></h4>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"> <i class="material-icons green-text">call</i>Téléphone</div>
+                <div class="collapsible-body">
+                    <h4><a href="#">78-378-66-12</a></h4>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"> <i class="material-icons green-text">room</i>Adrésse</div>
+                <div class="collapsible-body">
+                    <h4><a href="#">Mariste Fann</a></h4>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>

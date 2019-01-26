@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.3.4/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.3.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>#map_3e7248ab076548598213ee65287698c0 {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
+</head>
+<body>    
+    
+    <div class="folium-map" id="map_3e7248ab076548598213ee65287698c0" ></div>
+</body>
+<script>    
+    
+    
+        var bounds = null;
+    
+
+    var map_3e7248ab076548598213ee65287698c0 = L.map(
+        'map_3e7248ab076548598213ee65287698c0', {
+        center: [14.6937, -17.44406],
+        zoom: 12,
+        maxBounds: bounds,
+        layers: [],
+        worldCopyJump: false,
+        crs: L.CRS.EPSG3857,
+        zoomControl: true,
+        });
+
+    
+    
+    var tile_layer_e6ee7764759040afb9a3f494b294561d = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+        "attribution": null,
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "opacity": 1,
+        "subdomains": "abc",
+        "tms": false
+}).addTo(map_3e7248ab076548598213ee65287698c0);
+    
+        var marker_0b5c396282c7417f9b3c745c0af80bab = L.marker(
+            [14.6937, -17.44406],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_3e7248ab076548598213ee65287698c0);
+        
+    
+            var popup_1b80308e37dd4ed798cf5d2a29be881c = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_1097298492c04edda6cf3bd889e6fa36 = $(`<div id="html_1097298492c04edda6cf3bd889e6fa36" style="width: 100.0%; height: 100.0%;"><h2>Optalmologue <br/> Téléphone:78-378-66-12</h2></div>`)[0];
+                popup_1b80308e37dd4ed798cf5d2a29be881c.setContent(html_1097298492c04edda6cf3bd889e6fa36);
+            
+
+            marker_0b5c396282c7417f9b3c745c0af80bab.bindPopup(popup_1b80308e37dd4ed798cf5d2a29be881c)
+            ;
+
+            
+        
+    
+        marker_0b5c396282c7417f9b3c745c0af80bab.bindTooltip(
+            `<div>`
+            + `Cliquez pour plus de détail` + `</div>`,
+            {"sticky": true}
+        );
+        
+    
+        var marker_ba6fdde640074eb28ffd0269c8f70cda = L.marker(
+            [14.6937, -17.47406],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_3e7248ab076548598213ee65287698c0);
+        
+    
+            var popup_d95142cd646441d4a9ee8374fe62ce70 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_3980d4cfe9ef42208dba270bcc337db2 = $(`<div id="html_3980d4cfe9ef42208dba270bcc337db2" style="width: 100.0%; height: 100.0%;"><h2>Optalmologue <br/> Téléphone:78-478-26-12</h2></div>`)[0];
+                popup_d95142cd646441d4a9ee8374fe62ce70.setContent(html_3980d4cfe9ef42208dba270bcc337db2);
+            
+
+            marker_ba6fdde640074eb28ffd0269c8f70cda.bindPopup(popup_d95142cd646441d4a9ee8374fe62ce70)
+            ;
+
+            
+        
+    
+        marker_ba6fdde640074eb28ffd0269c8f70cda.bindTooltip(
+            `<div>`
+            + `Cliquez pour plus de détail` + `</div>`,
+            {"sticky": true}
+        );
+        
+</script>

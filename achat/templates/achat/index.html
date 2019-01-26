@@ -1,0 +1,93 @@
+{% extends 'base.html' %} {% load static %} {% block title %}
+<title>Achat 9.0</title> {% endblock title %} {% block css %}
+<link rel="stylesheet" href="{% static 'achat/css/index.css' %}" /> {% endblock css %} {% block content %}
+
+<div class="section">
+  <div style="text-align:center;">
+    <h4>
+      <span style="color:green;"
+        >Remplissez le formulaire pour valider votre commande</span
+      >
+      <span style="width:150px;display:block;margin-left:45%;"
+        ><img
+          src="{{achat_lunette.image.url}}"
+          style="width:100%;height:70px;"
+        />
+      </span>
+    </h4>
+  </div>
+  {% if error %}
+          <h5 class="red white-text center"><span class="animated fadeInLeft">{{error}}</span></h5>
+  {% elif succes %}
+        <h5 class="green white-text center"><span class="animated fadeInLeft">{{succes}}</span></h5>
+  {% endif %}
+  <form action="" method="post">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col s12 m4 identification">
+        <div class="green white-text center" style="height:40px;line-height:40px;">Identifiez vous</div>
+        <div class="row">
+           <div class="input-field col s8">
+             <input type="tel" class="activate" name="tel">
+             <label class="active" for="tel">Votre Numéro de Téléphone</label>
+          </div>
+        </div>
+        <p style="color:red">
+          Nb: Nous vous demandons votre numero de téléphone au cas on
+          souhaiterai vous contacter lors de la livraison de votre commande pour
+          connaitre exactement votre emplacement
+        </p>
+      </div>
+      <div class="col s12 m4 commande">
+        <div class="green white-text center" style="height:40px;line-height:40px;">Remplissez les details de la commande</div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input  id="first_name2" type="text" class="validate" name="nom">
+                <label class="active" for="first_name2">Votre nom complet</label>
+            </div>
+          </div>
+          
+                <div class="input-field col s12">
+                  <textarea id="textarea1" class="materialize-textarea" name="adresse"></textarea>
+                  <label for="textarea1">Décrivez :inutieusement votre adresse</label>
+                </div>
+          
+        
+      </div>
+      <div class="col s12 m4 detail-livraison">
+        <div class="green white-text center" style="height:40px;line-height:40px;">Details de la livraison</div>
+        <div style="background:white;height: 20px;"></div>
+        <h6>
+          Choisissez un type de livraison
+        </h6>
+        <p>
+            <label>
+              <input name="group1" type="radio" checked value="gratuit" />
+              <span  style="text-decoration:underline;color:green;">Livraison gratuit le weekend </span> <br><span> Les livraisons se font le dimanche de 09h-17h </span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="group1" value="payante" type="radio"/>
+              <span  style="text-decoration:underline;color:green;">Livraison payante</span> <br> <span>Vous recevrez votre commande le meme jour mais les frais de
+                livraisons ne serons pas gratuits(2000FCFA)</span>
+            </label>
+          </p>
+         
+      
+          
+        <p>
+          Nb: Une fois le livreur sur place,ce dernier s'assurera que vous ayez
+          fait le virement par <span style="color:red;">orange money</span>
+        </p>
+      </div>
+    </div>
+    <input type="submit" value="Valider" class="btn btn-large green waves-effect white-text right"/>
+    <div class="clearfix"></div>
+  </form>
+  <br><br>
+  
+
+  {% include 'footer.html' %}
+</div>
+{% endblock content %}

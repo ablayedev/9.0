@@ -1,0 +1,31 @@
+.body-panier{
+    margin-top:205px;
+}
+.panier-vide{
+    text-align: center;
+    color:#339BEB;
+    font-size:35px;
+}
+.proposition-client ul{
+    margin-left:10%;
+    width:85%;
+}
+.proposition-client ul li{
+    width:200px;
+    padding:25px;
+    display: inline-block;
+    list-style-type: none;
+    cursor:pointer;
+}
+.lunettes{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:10px;
+    margin-left:15%;
+    width:75%;
+}
+.lunettes .glasse h5{
+   text-align: center;
+   font-size:19px;
+   color:green;
+}

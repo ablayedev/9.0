@@ -1,0 +1,30 @@
+.helptext{
+    display:none;
+}
+body{
+    background: #444444;
+    color:white;
+
+}
+.errorlist li{
+    display:none;
+}
+.box{
+    margin:10% 35%;
+    border:1px solid black;
+    width:300px;
+    padding: 50px;
+    background:white;
+    color:black;
+}
+.form{
+   margin-bottom:25px;   
+}
+label{
+    display: block;
+    font-size:20px;
+}
+input{
+  height: 40px;
+  width:100%;
+}

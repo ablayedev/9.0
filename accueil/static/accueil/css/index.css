@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Charm|Josefin+Sans');
+.body-accueil{
+    width: 100%;
+    
+}
+a,input{
+    outline:none;
+}
+
+.section2 img{
+    width:200px;
+    height: 100px;
+}
+.section3{
+   height: auto;
+}
+.section3 .slides{
+    height: 400px !important;
+}
+
+.section4 img{
+    width:200px;
+    height: 100px;
+    border:2px solid black;
+}
+.section5 img{
+    width:200px;
+    height: 100px;
+    border:2px solid black;
+   
+}
+.section3 img{
+    width:600px;
+    height: 300px;
+    border:2px solid black;
+   
+}
+.section1{
+    margin-left:2.5%;
+    width:95%;
+}
+.title{
+    color:white;
+    text-align:center;
+    font-size:42px;
+    height: 75px;
+    line-height: 75px;
+    font-family: 'Charm';
+
+}
+.voir-collection{
+    text-align: center;
+}
+.slide {
+    animation: anim-slide 1s linear forwards;
+    opacity: 0;
+}
+
+@keyframes anim-newslester{
+    to{
+       margin-left:35%;
+    }
+}
+
+@keyframes anim-slide {
+    25% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    75% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

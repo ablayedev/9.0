@@ -1,0 +1,165 @@
+{% extends 'base.html' %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'boutique/css/detail.css' %}" /> {% endblock css %} {% block content %}
+{% if active_menu %}
+<script>
+  const recup = document.querySelector(".boutique");
+  recup.classList.add("active-menu");
+</script>
+{% endif %}
+<div class="section">
+  <div class="">
+      <div class="row">
+          <div class="col s12 m4">
+            <div class="glasse-image">
+              <div class="img-zoom-container">
+                <img
+                  id="myimage"
+                  src="{{detail.image.url}}
+                  "
+                  width="400px"
+                  height="300px"
+                  alt="Girl"
+                />
+              </div>
+            </div>
+            <div class="share">
+              <div class=" essayage">
+                <p>
+                  <a
+                    href="#"
+                    style="text-decoration:underline;color:#339BEB;font-size:40px"
+                    >Essayage en 3d</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m4"><div id="myresult" class="img-zoom-result" style="border:1px solid black;"></div></div>
+          <div class="detail col s12 m4">
+            <div>
+              <h5>Lunettes de {{detail.nature.capitalize}}-{{detail.marque.capitalize}}-</h5>
+              <p class="prix">Prix: <span>{{detail.prix}} FCFA</span></p>
+              <div>
+                <button class="btn btn-large green pulse white-text circle">Mode de paiement</button>
+                <ul class="mode">
+                  <li> <i class="material-icons blue-text Tiny">check</i>Paiment via orange money </li>
+                  <li> <i class="material-icons blue-text Tiny">check</i>Livraison tout les week-end(gratuit)</li>
+                  <li><i class="material-icons blue-text Tiny">check</i>Livraison express (payante)</li>
+                </ul>
+              </div>
+              <div class="panier">
+                 <a href="{% url 'panier:index' detail.id %}" class="btn btn-large green waves-effect">Ajouter au panier</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+  <div class="description">
+    <hr />
+    <h5 style="text-align:center;color:#339BEB;">
+      Description en détail de la lunette
+    </h5>
+    <hr />
+    <div class="detail-description row">
+      <div class="container">
+        <div class="detail-technique col s12 m4">
+          <h6 style="text-decoration:underline;">Details techniques</h6>
+          <div class="flex-detail">
+            <div>Marque:</div>
+            <div>{{detail.marque}}</div>
+          </div>
+          <div class="flex-detail">
+            <div>Type</div>
+            <div>{{detail.nature}}</div>
+          </div>
+          <div class="flex-detail">
+            <div>Monture:</div>
+            <div>Cerclé</div>
+          </div>
+          <div class="flex-detail">
+            <div>Marque:</div>
+            <div>Rayban</div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <h6 style="text-decoration:underline;">Dimensions de la monture</h6>
+        </div>
+        <div class="col s12 m4">
+          <h6 style="text-decoration:underline;">Commandez une monture semblables</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include 'footer.html' %}
+</div>
+<script>
+  function imageZoom(imgID, resultID) {
+    var img, lens, result, cx, cy;
+    img = document.getElementById(imgID);
+    result = document.getElementById(resultID);
+    /*create lens:*/
+    lens = document.createElement("DIV");
+    lens.setAttribute("class", "img-zoom-lens");
+    /*insert lens:*/
+    img.parentElement.insertBefore(lens, img);
+    /*calculate the ratio between result DIV and lens:*/
+    cx = result.offsetWidth / lens.offsetWidth;
+    cy = result.offsetHeight / lens.offsetHeight;
+    /*set background properties for the result DIV*/
+    result.style.backgroundImage = "url('" + img.src + "')";
+    result.style.backgroundSize =
+      img.width * cx + "px " + img.height * cy + "px";
+    /*execute a function when someone moves the cursor over the image, or the lens:*/
+    lens.addEventListener("mousemove", moveLens);
+    img.addEventListener("mousemove", moveLens);
+    /*and also for touch screens:*/
+    lens.addEventListener("touchmove", moveLens);
+    img.addEventListener("touchmove", moveLens);
+    function moveLens(e) {
+      var pos, x, y;
+      /*prevent any other actions that may occur when moving over the image*/
+      e.preventDefault();
+      /*get the cursor's x and y positions:*/
+      pos = getCursorPos(e);
+      /*calculate the position of the lens:*/
+      x = pos.x - lens.offsetWidth / 2;
+      y = pos.y - lens.offsetHeight / 2;
+      /*prevent the lens from being positioned outside the image:*/
+      if (x > img.width - lens.offsetWidth) {
+        x = img.width - lens.offsetWidth;
+      }
+      if (x < 0) {
+        x = 0;
+      }
+      if (y > img.height - lens.offsetHeight) {
+        y = img.height - lens.offsetHeight;
+      }
+      if (y < 0) {
+        y = 0;
+      }
+      /*set the position of the lens:*/
+      lens.style.left = x + "px";
+      lens.style.top = y + "px";
+      /*display what the lens "sees":*/
+      result.style.backgroundPosition = "-" + x * cx + "px -" + y * cy + "px";
+    }
+    function getCursorPos(e) {
+      var a,
+        x = 0,
+        y = 0;
+      e = e || window.event;
+      /*get the x and y positions of the image:*/
+      a = img.getBoundingClientRect();
+      /*calculate the cursor's x and y coordinates, relative to the image:*/
+      x = e.pageX - a.left;
+      y = e.pageY - a.top;
+      /*consider any page scrolling:*/
+      x = x - window.pageXOffset;
+      y = y - window.pageYOffset;
+      return { x: x, y: y };
+    }
+  }
+
+  imageZoom("myimage", "myresult");
+</script>
+{% endblock content %}

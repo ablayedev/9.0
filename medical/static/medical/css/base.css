@@ -1,0 +1,115 @@
+.ophtalmologue {
+    padding: 15px;
+    background: #1d9ae8;
+  }
+  .troubles >div{
+      margin-left:15%;
+      width:60%;
+      position: relative;
+  }
+  .troubles .test{
+      background: #1d9ae8;
+      width:150px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+  }
+  .conseil{
+    width:53%;
+    color:black;
+    font-weight: bolder;
+  }
+  .recherche-ophtalmologue{
+    width:45%;
+  }
+  .troubles a{
+      color:white;
+      font-size: 20px;
+      
+  }
+  .troubles h2{
+      color: #1d9ae8;
+      text-decoration: underline;
+  }
+  .ophtalmologue a {
+    color: white;
+    font-size: 20px;
+  }
+  .nav1 {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+    width: 90%;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  li {
+    list-style-type: none;
+  }
+  .menu-hover {
+    position: relative;
+  }
+  .sub-menu {
+    display: none;
+    background: white;
+  }
+  .nav2 ul {
+    margin-left: 10%;
+  }
+  .menu-hover:hover .sub-menu {
+    position: absolute;
+    display: block;
+    width: 150px;
+    margin-left: -15px;
+    z-index: 50;
+  }
+  .nav2 > ul > li {
+    display: inline-block;
+    padding: 18px;
+    font-size: 22px;
+    opacity: 0.5;
+    margin-bottom: 15px;
+  }
+  .nav2 > ul > li >a{
+      color:black;
+  }
+  .sub-menu li {
+    padding: 10px;
+  }
+  .sub-menu li a {
+    color: black;
+  }
+  a {
+    text-decoration: none;
+  }
+  .slide {
+    animation: anim-slide 1s linear forwards;
+    opacity: 0;
+    width: 100%;
+  }
+
+  @keyframes anim-newslester {
+    to {
+      margin-left: 35%;
+    }
+  }
+
+  @keyframes anim-slide {
+    25% {
+      opacity: 0.4;
+    }
+
+    50% {
+      opacity: 0.6;
+    }
+
+    75% {
+      opacity: 0.8;
+    }
+
+    100% {
+      opacity: 1;
+    }
+}

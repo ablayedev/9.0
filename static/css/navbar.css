@@ -1,0 +1,12 @@
+.logo{
+    width:120px;
+    height: 55px;
+}
+
+ion-icon{
+    font-size:22px;
+    color:#1d9ae8;
+}
+.active-menu{
+    background:#eb493b;
+}

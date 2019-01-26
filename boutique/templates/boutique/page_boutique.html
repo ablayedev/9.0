@@ -1,0 +1,115 @@
+{% extends 'base.html' %} {% load static %} {% block title %}
+<title>Accueil 9.0</title> {% endblock title %} {% block css %}
+<link rel="stylesheet" href="{% static 'boutique/css/page_boutique.css' %}" />
+{% endblock css %} {% block content %} {% if active_menu %}
+<script>
+  const recup = document.querySelector(".boutique");
+  recup.classList.add("active-menu");
+</script>
+{% endif %}
+<div class="section">
+  <div class="row">
+    <div class="col s12">
+      <br />
+      <h3 class="center animated fadeInLeft" style="animation-duration:2s;">
+        Welcome guys <i class="material-icons medium green-text">mood</i> <span
+        class="center animated fadeInLeft"
+        style="font-family: 'Pacifico';animation-delay:1s;"
+      >
+        To
+      </span>
+      <span
+        class="center animated bounceIn"
+        style="animation-delay:2s;animation-duration:1s;"
+      >
+        9.0<span style="color:#eb493b">Boutique</span>
+      </span>
+      </h3>
+      
+      
+
+     
+      <br /><br />
+     
+    </div>
+ 
+  </div>
+  <div class="col s12 m6">
+    <div>
+      <div><h5></h5></div>
+      <div>
+        <form action="" method="post">
+          {% csrf_token %}
+          <div class="input-field col s12">
+            <select id="show-glasse" name="show-glasse">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">Rayban</option>
+              <option value="2">Quartier</option>
+             
+            </select>
+            <label>LUNETTES DE VUES</label>
+          </div>
+        </form>
+      </div>
+    </div>
+   
+  </div>
+  <div class="row default">
+    
+    {% for lunette in lunette  %}
+    <div class="col s12 m3">
+      <div class="col s12 mm3 card-panel center">
+        <img
+         style='width:200px;height:200px;'
+          src="{{lunette.image.url}}"
+        />
+        <h4>Lunettes {{lunette.marque.capitalize}}</h4>
+        <p>Prix:{{lunette.prix}} FCFA</p>
+        <P>{{lunette.description}}</P>
+        <a class="btn  red white-text" href="{% url 'boutique:detail' lunette.id %}">
+          Ajouter au panier
+        </a>
+        <br /><br />
+      </div>
+    </div>
+    {% endfor %}
+      
+  </div>
+  <div class="lunettes" style="">
+    <div class="row load-glasse-rayban">
+    </div>
+    <p>ok</p>
+    <div class="row load-glasse-quartier">
+    </div>
+  </div>
+  <style>
+   
+  </style>
+  {% include 'footer.html' %}
+</div>
+
+
+
+<script>
+  document.getElementById('show-glasse').addEventListener('change',function(e){
+    document.querySelector('.default').innerHTML=""
+        if(e.target.value=="1"){
+          document.querySelector('.load-glasse-quartier').innerHTML=""
+          {% for rayban in rayban %}
+            document.querySelector('.load-glasse-rayban').innerHTML+="<div class='col s12 m3'><div class='card'><div class='card-content'><img class='glasse' style='width:200px;height:200px;' src='{{rayban.image.url}}'/><h4>Lunette {{rayban.marque.capitalize}}</h4><p>Prix:{{rayban.prix}} FCFA</p> <div class='card-action'><a  class='btn  red white-text' href='{% url 'boutique:detail' rayban.id %}'> Ajouter au panier</a></div></div>"
+          {% endfor %}
+        }else if(e.target.value="2"){
+          document.querySelector('.load-glasse-rayban').innerHTML=""
+          {% for quartier in quartier %}
+          document.querySelector('.load-glasse-quartier').innerHTML+="<div class='col s12 m3'><div class='card'><div class='card-content'><img class='glasse' style='width:200px;height:200px;' src='{{quartier.image.url}}'/><h4>Lunette {{quartier.marque.capitalize}}</h4><p>Prix:{{quartier.prix}} FCFA</p> <div class='card-action'><a  class='btn  red white-text' href='{% url 'boutique:detail' quartier.id %}'> Ajouter au panier</a></div></div>"
+        {% endfor %}
+        }else{
+             alert('no')
+        }
+  })
+ 
+</script>      
+
+
+
+{% endblock content%}

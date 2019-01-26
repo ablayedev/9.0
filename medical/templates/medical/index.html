@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+     {% include 'medical/navbar.html' %}
+    {% include 'footer.html' %}
+{% endblock content %}
+    
+<!--
+  <div class="body-accueil">
+            <div style="width:100%;height: 350px;overflow:hidden;">
+                    <div class="slide active" id="slide1">
+                      <img src="{% static 'image/pexels-photo-256380.jpeg' %}" srcset="" />
+                    </div>
+                    <div class="slide" id="slide2">
+                      <img src="{% static 'image/pexels-photo-256380.jpeg' %}" alt="" srcset="" />
+                    </div>
+                    <div class="slide" id="slide3">
+                      <img src="{% static 'image/pexels-photo-305567.jpeg' %}" alt="" srcset="" />
+                    </div>
+                  </div>
+                  
+                  <div class="troubles">
+                    <div>
+                        <h2>Hypermétropie</h2>
+                      Hypermétropie L'hypermétropie est un problème de vision commun qui affecte
+                      environ un quart de la population. Les personnes souffrant d'hypermétropie
+                      peuvent voir très facilement les objets distants, mais ont de la
+                      difficulté à voir les objets rapprochés. SYMPTÔMES ET TRAITEMENTS Les
+                      hypermétropes souffrent à l'occasion de maux de tête et de fatigue
+                      visuelle. Ils peuvent aussi faire du strabisme et se sentir fatigués
+                      lorsqu'ils effectuent un travail à une distance rapprochée. Ce problème
+                      peut être corrigé à l'aide de lunettes ou de lentilles cornéennes. La
+                      prescription d'un hypermétrope est déterminée par un nombre positif. Il
+                      est probable que le port de lunettes ou lentilles cornéennes soit requis
+                      en tout temps ou seulement pour lire, travailler à l'ordinateur ou
+                      effectuer toute autre activité rapprochée.
+                      <br><br>
+                      <div class="test"><a href="#">Je fais le test</a></div>
+                    </div>
+                    <div>
+                      <h2>Astigmatisme</h2>
+                      Astigmatisme L'astigmatisme est causé par un défaut de la courbure de la
+                      cornée et/ou du cristallin qui fait en sorte que les images sont
+                      embrouillées ou distortionnées à toutes les distances. L'astigmatisme peut
+                      accompagner la myopie ou l'hypermétropie. SYMPTÔMES ET TRAITEMENTS S'il
+                      n'est pas corrigé, l'astigmatisme peut provoquer des maux de tête, de la
+                      fatigue visuelle, embrouiller et distortionner la vision à toutes les
+                      distances. La majorité des niveaux d'astigmatisme peut être corrigée à
+                      l'aide de lunettes correctement ajustées avec une prescription appropriée.
+                      <br><br>
+                      <div class="test"><a href="#">Je fais le test</a></div>
+                    </div>
+                    <div>
+                        <h2>La myopie</h2>
+                      La myopie est un problème de vision qui touche environ un tiers de la
+                      population. Les myopes ont de la difficulté à voir et à lire de loin, mais
+                      n'ont aucun problème de vision de près. SYMPTÔMES ET TRAITEMENTS Les
+                      myopes souffrent fréquemment de maux de tête et de fatigue visuelle, font
+                      du strabisme et se sentent fatigué en conduisant ou en pratiquant certains
+                      sports. On peut corriger la myopie à l'aide de lunettes, de lentilles
+                      cornéennes ou par la chirurgie réfractive. Selon la gravité du problème,
+                      il faudra peut-être porter des lunettes ou lentilles cornéennes en tout
+                      temps, ou uniquement lorsque la vision de loin est utilisée tel qu'en
+                      conduisant et en regardant un film ou un tableau. La prescription d'un
+                      myope est déterminée par un chiffre négatif.
+                      <br><br>
+                      <div class="test"><a href="#">Je fais le test</a></div>
+                    </div>
+                    <div>
+                        <h2>La presbytie</h2>
+                      La presbytie c'est la perte d'élasticité du cristallin, ce qui résulte en
+                      une incapacité à bien distinguer les images vues de près. Les adultes
+                      commencent normalement à voir embrouillé de près au début de la
+                      quarantaine. Personne n'y échappe, la presbytie affecte tout le monde avec
+                      l'âge, même les individus n'ayant jamais souffert de problèmes de vision.
+                      SYMPTÔMES ET TRAITEMENTS Quelques-uns des signes et symptômes de la
+                      presbytie sont : une tendance à lire à bout de bras, une vision
+                      embrouillée à une distance de lecture normale et une fatigue visuelle
+                      accompagnée de maux de tête lors d'un travail rapproché. Les presbytes
+                      peuvent corriger cette déficience en portant des lunettes ou des lentilles
+                      cornéennes ou encore par la chirurgie.
+                      
+                      <br><br>
+                      <div class="test"><a href="#">Je fais le test</a></div>
+                    </div>
+                  </div>
+                
+                  <style>
+                    
+                  </style>
+                  <script>
+                    var slides = document.querySelectorAll(".slide");
+                    var curent = 0;
+                    for (const slide of slides) {
+                      slide.style.display = "none";
+                    }
+                    slides[0].style.display = "block";
+                
+                    function slide() {
+                      curent++;
+                      actuel = document.querySelector(".active");
+                      actuel.style.display = "none";
+                      if (curent == slides.length) {
+                        var next = document.getElementById("slide1");
+                        curent = 0;
+                      } else {
+                        var next = actuel.nextElementSibling;
+                      }
+                      actuel.classList.remove("active");
+                      next.classList.add("active");
+                      next.style.display = "block";
+                    }
+                
+                    setInterval(slide, 2500);
+                  </script>
+     </div>
+-->

@@ -1,0 +1,144 @@
+{% load static %}
+
+
+
+<div class="center">
+  <ul id="tabs-swipe-demo" class="tabs">
+    <li class="tab col s3"><a class="active" href="#test-swipe-1">Troubles Visuels</a></li>
+    <li class="tab col s3"><a  href="#test-swipe-2">Test de vueà</a></li>
+    <li class="tab col s3"><a href="#test-swipe-3">Trouver un opthalmologue</a></li>
+  </ul>
+</div>
+<div style="height:auto;" id="test-swipe-1" class="col s12">
+  <div class="container">
+    <div>
+        <h4 class="red-text" style="text-decoration:underline">Hypermétropie</h4 class="red-text" style="text-decoration:underline">
+      Hypermétropie L'hypermétropie est un problème de vision commun qui affecte
+      environ un quart de la population. Les personnes souffrant d'hypermétropie
+      peuvent voir très facilement les objets distants, mais ont de la
+      difficulté à voir les objets rapprochés. SYMPTÔMES ET TRAITEMENTS Les
+      hypermétropes souffrent à l'occasion de maux de tête et de fatigue
+      visuelle. Ils peuvent aussi faire du strabisme et se sentir fatigués
+      lorsqu'ils effectuent un travail à une distance rapprochée. Ce problème
+      peut être corrigé à l'aide de lunettes ou de lentilles cornéennes. La
+      prescription d'un hypermétrope est déterminée par un nombre positif. Il
+      est probable que le port de lunettes ou lentilles cornéennes soit requis
+      en tout temps ou seulement pour lire, travailler à l'ordinateur ou
+      effectuer toute autre activité rapprochée.
+      <br><br>
+      <div class="green white-text btn btn-large"><a class="white-text waves-effect" href="#">Je fais le test</a></div>
+    </div>
+    <div>
+      <h4 class="red-text" style="text-decoration:underline">Astigmatisme</h4 class="red-text" style="text-decoration:underline">
+      Astigmatisme L'astigmatisme est causé par un défaut de la courbure de la
+      cornée et/ou du cristallin qui fait en sorte que les images sont
+      embrouillées ou distortionnées à toutes les distances. L'astigmatisme peut
+      accompagner la myopie ou l'hypermétropie. SYMPTÔMES ET TRAITEMENTS S'il
+      n'est pas corrigé, l'astigmatisme peut provoquer des maux de tête, de la
+      fatigue visuelle, embrouiller et distortionner la vision à toutes les
+      distances. La majorité des niveaux d'astigmatisme peut être corrigée à
+      l'aide de lunettes correctement ajustées avec une prescription appropriée.
+      <br><br>
+      <div class="green white-text btn btn-large"><a class="white-text waves-effect" href="#">Je fais le test</a></div>
+    </div>
+    <div>
+        <h4 class="red-text" style="text-decoration:underline">La myopie</h4 class="red-text" style="text-decoration:underline">
+      La myopie est un problème de vision qui touche environ un tiers de la
+      population. Les myopes ont de la difficulté à voir et à lire de loin, mais
+      n'ont aucun problème de vision de près. SYMPTÔMES ET TRAITEMENTS Les
+      myopes souffrent fréquemment de maux de tête et de fatigue visuelle, font
+      du strabisme et se sentent fatigué en conduisant ou en pratiquant certains
+      sports. On peut corriger la myopie à l'aide de lunettes, de lentilles
+      cornéennes ou par la chirurgie réfractive. Selon la gravité du problème,
+      il faudra peut-être porter des lunettes ou lentilles cornéennes en tout
+      temps, ou uniquement lorsque la vision de loin est utilisée tel qu'en
+      conduisant et en regardant un film ou un tableau. La prescription d'un
+      myope est déterminée par un chiffre négatif.
+      <br><br>
+      <div class="green white-text btn btn-large"><a class="white-text waves-effect" href="#">Je fais le test</a></div>
+    </div>
+    <div>
+      <h4 class="red-text" style="text-decoration:underline">La presbytie</h4 class="red-text" style="text-decoration:underline">
+      La presbytie c'est la perte d'élasticité du cristallin, ce qui résulte en
+      une incapacité à bien distinguer les images vues de près. Les adultes
+      commencent normalement à voir embrouillé de près au début de la
+      quarantaine. Personne n'y échappe, la presbytie affecte tout le monde avec
+      l'âge, même les individus n'ayant jamais souffert de problèmes de vision.
+      SYMPTÔMES ET TRAITEMENTS Quelques-uns des signes et symptômes de la
+      presbytie sont : une tendance à lire à bout de bras, une vision
+      embrouillée à une distance de lecture normale et une fatigue visuelle
+      accompagnée de maux de tête lors d'un travail rapproché. Les presbytes
+      peuvent corriger cette déficience en portant des lunettes ou des lentilles
+      cornéennes ou encore par la chirurgie.
+      
+      <br><br>
+      <div class="green white-text btn btn-large"><a class="white-text waves-effect" href="#">Je fais le test</a></div>
+    </div>
+  </div>
+</div>
+<div style="height:600px;" id="test-swipe-2" class="col s12 red">
+  <div class="center white-text">
+    <h2>Coming sonn</h2>
+  </div>
+</div>
+<div style="height:350px;" id="test-swipe-3" class="col s12">
+      <h5 class="center">Acceptez vous qu'on vous mette en relation avec notre réseau d'opthalmologue
+        <a href="{% url 'medical:opthalmologue' %}" class="btn btn-large green waves-effect">J'accepte</a>
+      </h5>
+</div>
+
+
+
+
+
+
+<!--
+  <nav>
+  <div class="nav1">
+    <div class="conseil">
+      <p>
+        SE PROTÉGER LES YEUX AU QUOTIDIEN La vie de tous les jours comporte un
+        nombre surprenant de dangers pour nos yeux et la vision. Voici quelques
+        risques dont il faut être conscient pour bien se protéger les yeux, et
+        des conseils.
+      </p>
+    </div>
+    <div class="recherche-opthalmologue">
+      <div class="ophtalmologue">
+        <a href="{% url 'medical:opthalmologue' %}">Trouver un ophtalmologue</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav2">
+    <ul>
+      <li style="opacity:1;">
+        <a
+          href="{% url 'accueil:index' %}"
+          class="logo"
+          style="display:block;width:100px;height: 45px;"
+          ><img
+            src="{% static 'image/logo.jpg' %}"
+            alt=""
+            srcset=""
+            style="width:100%;height: 100%;"
+        /></a>
+      </li>
+      <li><a href="{% url 'medical:index' %}">Troubles Visuels</a></li>
+      <li>
+        <a href="{% url 'medical:maladie_occulaire' %}">Maladie occulaire</a>
+      </li>
+      <li class="menu-hover">
+        <a href="#">Tester ma vue</a>
+        <ul class="sub-menu">
+          <li><a href="#">Vision de loin</a></li>
+          <li><a href="#">Vision de pres</a></li>
+          <li><a href="#">Daltonien</a></li>
+          <li><a href="#">Test de couleurs</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Vous avez une question</a></li>
+    </ul>
+  </div>
+</nav>
+
+-->

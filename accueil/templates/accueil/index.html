@@ -1,0 +1,201 @@
+{% extends 'base.html' %} {% load static %} {% block title %}
+<title>Accueil 9.0</title> {% endblock title %} {% block css %}
+<link rel="stylesheet" href="{% static 'accueil/css/index.css' %}" /> {% endblock css %} {% block script %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'engine1/style.css' %}"
+/>
+<script type="text/javascript" src="{% static 'engine1/jquery.js' %}"></script>
+{% endblock script %} {% block content %} {% if active_menu %}
+<script>
+  const recup = document.querySelector(".accueil");
+  recup.classList.add("active-menu");
+</script>
+{% endif %}
+
+<div></div>
+<div style="height:25px;"></div>
+<div class=" section row section1">
+  <div class="col s12 m6" style="margin-top:-15px;">
+    <h2 class="center animated fadeInLeft" style="animation-duration:2s;" >Welcome guys <i class="material-icons medium green-text">mood</i> </h2>
+    <h5 class="center animated fadeInLeft" style="font-family: 'Pacifico';animation-delay:1s;">To</h5>
+    <h2 class="center animated bounceIn" style="animation-delay:2s;animation-duration:1s;">9.0<span style="color:#eb493b">Lunetterie</span></h2>
+
+    <h5 class="center">
+        9.0  est une entreprise proposant la vente de lunettes de qualité.L' objectif principal est de permettre à nos utilisateurs d'essayer en ligne les lunettes qu'ils choisissent avant achat
+    </h5>
+    
+    <div class="boutique center" style="margin-top: 75px;">
+      <a
+        href="#modal1"
+        class="btn btn-large waves-effect red modal-trigger"
+        >En savoir plus</a
+      >
+    </div>
+  </div>
+  <div class="shoting col s12 m6">{% include 'slide.html' %}</div>
+</div>
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Qui sommes nous?</h4>
+      <p>
+         <p class="container" style="font-family: 'Roboto';font-size:18px;"> 9.0  est une entreprise proposant la vente de lunettes de qualité.L' objectif principal est de permettre à nos utilisateurs d'essayer les lunettes qu'ils choisissent avant achat.Voici en détails les fonctionalités de la plateforme:</p>
+          <ul class="collapsible">
+              <li>
+                <div class="collapsible-header"><i class="material-icons green-text">camera</i>Essayage de lunette</div>
+                <div class="collapsible-body">
+                    <ul class="collection with-header">
+                        <li class="collection-item">Choisissez les lunettes qui vous plaisent</li>
+                        <li class="collection-item">Faites un zoom pour la regarder en détail</li>
+                        <li class="collection-item">Démarrer votre webcam</li>
+                        <li class="collection-item">Essayer en direct les lunettes pour savoir si elles vous vont</li>
+                      </ul>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons green-text">camera_alt</i>Partager vos photos</div>
+                <div class="collapsible-body">
+                    <ul class="collection with-header">
+                        <li class="collection-item">Partager les photos prises durant l'ssayage</li>
+                      </ul>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons green-text">control_point</i>Santé visuel</div>
+                <div class="collapsible-body">
+                    <ul class="collection with-header">
+                        <li class="collection-item">Faites un test visuel pour savoir si ca vaut la peine de voir un ophtalmologue</li>
+                        <li class="collection-item">Si c'est le cas nous vous indiquons les ophtalmologues disponibles en fonction de votre position</li>
+                        <li class="collection-item">Pour ceux qui sont malades télécharger votre ordenance</li>
+                      </ul>
+                </div>
+              </li>
+            </ul>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Je comprends</a>
+    </div>
+  </div>
+ <!--fin modal-->         
+<div class="section2 section">
+  <div>
+    <div class="red title">Lunettes à la mode</div>
+    <div class="container">
+      <br /><br />
+      <div class="row">
+       
+       {% for lunette  in lunette  %}
+       <div class="col s12 m3">
+        <div class="col s12 mm3 card-panel center">
+          <img
+            src="{{lunette.image.url}}"
+          />
+          <h4>Lunettes {{lunette.marque.capitalize}}</h4>
+          <p>Prix:{{lunette.prix}} FCFA</p>
+          <P>{{lunette.description}}</P>
+          <a class="btn  red white-text" href="{% url 'boutique:detail' lunette.id %}">
+            Ajouter au panier
+          </a>
+          <br /><br />
+        </div>
+      </div>
+       {% endfor %}
+         
+      </div>
+    </div>
+  </div>
+  <div class="voir-collection">
+    <a href="{% url 'boutique:page_boutique' %}" class="btn btn large center red">Voir la collection</a>
+  </div>
+</div>
+<br />
+<div class="section3">
+   
+    <div>
+        <div class="red title">Des clients entiérement satisfaits</div>
+          <div class="container">
+           
+            <div class="carousel" style="margin-top:-35px;">
+               {% for satisfait in satisfait  %}
+               <a class="carousel-item" href="#"><img src="{{satisfait.image.url}}"></a>
+               {% endfor %}
+                 
+              </div>
+          </div>
+    </div>
+    <br><br>
+    <div class="voir-collection">
+      <br><br>
+    </div>
+</div>
+ 
+</div>
+<br><br>
+<div class="section4">
+        <div>
+                <div class="red title">Lunettes de Vue</div>
+                <div class="container">
+                    <br /><br />
+                    <div class="row">
+                     
+                     {% for vue  in vue  %}
+                     <div class="col s12 m3">
+                      <div class="col s12 mm3 card-panel center">
+                        <img
+                          src="{{vue.image.url}}"
+                        />
+                        <h4>Lunettes {{vue.marque.capitalize}}</h4>
+                        <p>Prix:{{vue.prix}} FCFA</p>
+                        <P>{{vue.description}}</P>
+                        <a class="btn  red white-text" href="{% url 'boutique:detail' vue.id %}">
+                          Ajouter au panier
+                        </a>
+                        <br /><br />
+                      </div>
+                    </div>
+                     {% endfor %}
+                       
+                    </div>
+        </div>
+</div>
+<br><br>
+<div class="section5">
+  <div>
+          <div class="red title">Lunettes de soleil</div>
+          <div class="container">
+              <br /><br />
+              <div class="row">
+               
+               {% for soleil  in soleil  %}
+               <div class="col s12 m3">
+                <div class="col s12 mm3 card-panel center">
+                  <img
+                    src="{{soleil.image.url}}"
+                  />
+                  <h4>Lunettes {{soleil.marque.capitalize}}</h4>
+                  <p>Prix:{{soleil.prix}} FCFA</p>
+                  <P>{{soleil.description}}</P>
+                  <a class="btn  red white-text" href="{% url 'boutique:detail' soleil.id %}">
+                    Ajouter au panier
+                  </a>
+                  <br /><br />
+                </div>
+              </div>
+               {% endfor %}
+                 
+              </div>
+          </div>
+          <br><br>
+      <div class="voir-collection">
+        <a href="{% url 'boutique:page_boutique' %}" class="btn btn large center red">Boutique</a>
+      </div>
+  </div>
+</div>
+
+<br><br>
+{% include 'footer.html' %} {% endblock content %}
+
+

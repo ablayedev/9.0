@@ -1,0 +1,57 @@
+{% extends 'medical/base_medical.html' %} {% load static %} {% block css %}
+<link
+  rel="stylesheet"
+  href="{% static 'medical/css/maladie_occulaire.css' %}"
+/>
+{% endblock css %} {% block content %}
+<div class="body-maladie_occulaire">
+  <div class="content_occulaire">
+    <h3>
+      Vous trouverez de l'information sur les maladies oculo-visuelles les h3lus
+      communes. Bien qu'elles deviennent plus fréquentes avec l'âge, les
+      maladies oculo-visuelles sont relativement rares. Si vous pensez souffrir
+      d'un problème oculaire, n'hésitez pas à consulter un optométriste le plus
+      rapidement possible.
+    </h3>
+
+    <div>
+      <h4> Amblyopie (l'oeil paresseux) </h4>L'amblyopie est un trouble oculaire qui
+      affecte des milliers d'enfants et est presque TOUJOURS réversible, à
+      condition d'être traité à temps.
+      <br><br>
+      <div class="savoir_plus"><a href="#">En savoir plus</a></div>
+    </div>
+    <div>
+      <h4>Cataracte</h4> Une cataracte se forme lorsque le cristallin de l'œil, qui est
+      normalement clair, devient embué et opaque. La région affectée peut être
+      extrêmement petite ou très grande, entraînant alors une perte de vision
+      appréciable.
+      <br><br>
+      <div class="savoir_plus"><a href="#">En savoir plus</a></div>
+    </div>
+    <div>
+     <h4> Corps flottants </h4>Les corps flottants apparaissent comme des points, des
+      lignes, ou des «fils d'araignée» gris ou noirs devant les yeux. Pendant
+      que les yeux se déplacent, les corps flottants se déplacent aussi.
+      <br><br>
+      <div class="savoir_plus"><a href="#">En savoir plus</a></div>
+    </div>
+    <div>
+     <h4> Conjonctivite</h4> II existe trois principaux types de conjonctivites :
+      infectieuse, allergique ou chimique. La forme infectieuse est causée par
+      un virus ou par une bactérie contagieuse.
+      <br><br>
+      <div class="savoir_plus"><a href="#">En savoir plus</a></div>
+    </div>
+    <div>
+     <h4> Déficience de perception des couleurs</h4> La déficience de perception des
+      couleurs se produit lorsque votre capacité de différencier les couleurs et
+      les teintes diminue.
+      <br><br>
+      <div class="savoir_plus"><a href="#">En savoir plus</a></div>
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+</div>
+{% endblock content %}
